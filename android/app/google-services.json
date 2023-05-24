@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "608101750750",
+    "project_id": "zwerge-8ff8d",
+    "storage_bucket": "zwerge-8ff8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608101750750:android:2da704c34fbc3a84d66f4f",
+        "android_client_info": {
+          "package_name": "com.orderio.zwerge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608101750750-50hugur7at10ruvcu8bg7697ftjqrhml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr4_nrWcMGRdk1m3X1mIJb0t-VJ6syBvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608101750750-50hugur7at10ruvcu8bg7697ftjqrhml.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608101750750-7ek57ertem7gpbv35rd6liis07n8qhqv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zwerge.main"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608101750750:android:342d5ac6e44ea63ad66f4f",
+        "android_client_info": {
+          "package_name": "com.zwerge.main"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608101750750-50hugur7at10ruvcu8bg7697ftjqrhml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr4_nrWcMGRdk1m3X1mIJb0t-VJ6syBvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608101750750-50hugur7at10ruvcu8bg7697ftjqrhml.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608101750750-7ek57ertem7gpbv35rd6liis07n8qhqv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zwerge.main"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
