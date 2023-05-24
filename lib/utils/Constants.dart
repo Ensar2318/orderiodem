@@ -10,7 +10,7 @@ TextStyle inputLabelText =
 TextStyle inputText =
     TextStyle(color: MyColors.blacktwo, fontWeight: FontWeight.w500, fontFamily: "Avenir", fontStyle: FontStyle.normal, fontSize: 14.0);
 
-var shopID = 25;
+var shopID = 11;
 
 TextStyle tabText = TextStyle(color: MyColors.white, fontWeight: FontWeight.w900, fontFamily: "Avenir", fontStyle: FontStyle.normal, fontSize: 17.0);
 

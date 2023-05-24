@@ -14,7 +14,7 @@ class RemoteServices {
   static Map<String, String> headers = {};
 
   static Future<String?> addAddress(String address, String postalCode, String label, int type) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "26";
@@ -32,7 +32,7 @@ class RemoteServices {
   }
 
   static Future<String?> addToCart(Product? item, Variant? variant, bool haveVariant, int quantitiy, String options) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     var productExtras = [];
 
@@ -82,7 +82,7 @@ class RemoteServices {
   }
 
   static Future<String?> addToWhishlist(String product_id) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "25";
@@ -98,7 +98,7 @@ class RemoteServices {
   }
 
   static Future<String?> checkCoordinate(String coordinate) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "71";
@@ -114,7 +114,7 @@ class RemoteServices {
 
   static Future<String?> checkout(
       AddressModel? adres, LoginModel? user, AreaModel? area, String note, int payment, String selectedDeliveryTime) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
 
     var now = new DateTime.now();
@@ -149,7 +149,7 @@ class RemoteServices {
 
   static Future<String?> checkoutNoLogin(String name, String email, String phone, String address, String company, String note, LoginModel? user,
       AreaModel? area, int payment, String selectedDeliveryTime) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     // current date
     var now = new DateTime.now();
@@ -182,7 +182,7 @@ class RemoteServices {
   }
 
   static Future<String?> clearSession() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "1111";
@@ -195,7 +195,7 @@ class RemoteServices {
   }
 
   static Future<String?> createNewSupport(title, desc) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "11";
@@ -212,7 +212,7 @@ class RemoteServices {
   }
 
   static Future<String?> discountCheck(String code) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "20";
@@ -227,7 +227,7 @@ class RemoteServices {
   }
 
   static Future<String?> discountRemove() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "21";
@@ -241,7 +241,7 @@ class RemoteServices {
   }
 
   static Future<String?> dumpSession() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "2222";
@@ -254,7 +254,7 @@ class RemoteServices {
   }
 
   static Future<String?> editAddress(int id, String address, String postalCode, String label, int type) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "9";
@@ -273,7 +273,7 @@ class RemoteServices {
   }
 
   static Future<String?> editProductNote(String id, String note) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "19";
@@ -289,7 +289,7 @@ class RemoteServices {
   }
 
   static Future<String?> getAddress(String type) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=15&is_billing=' + type);
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=15&is_billing=' + type);
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -300,7 +300,7 @@ class RemoteServices {
   }
 
   static Future<String?> getAnnouuncements() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=16');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=16');
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -311,7 +311,7 @@ class RemoteServices {
   }
 
   static Future<String?> getAreas() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=17');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=17');
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -321,7 +321,7 @@ class RemoteServices {
   }
 
   static Future<String?> getCartList() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=7');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=7');
     var response = await client.get(url, headers: headers);
     print(response.body);
     print(response.body);
@@ -333,7 +333,7 @@ class RemoteServices {
   }
 
   static Future<String?> getDeliveryTimes() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=25&shop_id=' + shopID.toString());
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=25&shop_id=' + shopID.toString());
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -343,7 +343,7 @@ class RemoteServices {
   }
 
   static Future<String?> getDiscounts() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=5');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=5');
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -353,7 +353,7 @@ class RemoteServices {
   }
 
   static Future<String?> getFaq() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=23');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=23');
 
     var response = await client.get(
       url,
@@ -367,7 +367,7 @@ class RemoteServices {
   }
 
   static Future<String?> getImpressum() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=888');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=888');
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -377,7 +377,7 @@ class RemoteServices {
   }
 
   static Future<String?> getOptions() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=66');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=66');
     final box = GetStorage();
 
     var response = await client.get(url, headers: headers);
@@ -394,7 +394,7 @@ class RemoteServices {
   }
 
   static Future<String?> getOrders() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=12');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=12');
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -405,7 +405,7 @@ class RemoteServices {
   }
 
   static Future<String?> getPrivacyPolicy() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=10');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=10');
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -415,7 +415,7 @@ class RemoteServices {
   }
 
   static Future<String?> getProductInfo(int productId) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "6";
@@ -429,7 +429,7 @@ class RemoteServices {
   }
 
   static Future<String?> getProducts(String shopId) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=' + shopId);
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=' + shopId);
     /* var map = new Map<String, dynamic>();
     map['system_no'] = systemNo;
     map['kullanici_kodu'] = kullaniciKodu;
@@ -446,7 +446,7 @@ class RemoteServices {
   }
 
   static Future<String?> getRatings() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=4');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=4');
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -457,7 +457,7 @@ class RemoteServices {
   }
 
   static Future<String?> getRatingScore() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=3');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=3');
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -468,7 +468,7 @@ class RemoteServices {
   }
 
   static Future<String?> getServicePolicy() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=8');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=8');
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -478,7 +478,7 @@ class RemoteServices {
   }
 
   static Future<String?> getShopContact() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=11');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=11');
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -489,7 +489,7 @@ class RemoteServices {
   }
 
   static Future<String?> getStaticPages() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=24');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=24');
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
       return response.body;
@@ -499,7 +499,7 @@ class RemoteServices {
   }
 
   static Future<String?> getSupports() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=13');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=13');
     var response = await client.get(url, headers: headers);
 
     if (response.statusCode == 200) {
@@ -510,7 +510,7 @@ class RemoteServices {
   }
 
   static Future<String?> getWhishlist() async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=18');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=18');
     var map = new Map<String, dynamic>();
     var response = await client.get(url, headers: headers);
     if (response.statusCode == 200) {
@@ -521,7 +521,7 @@ class RemoteServices {
   }
 
   static Future<String?> login(String email, String password) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "1";
@@ -537,7 +537,7 @@ class RemoteServices {
   }
 
   static Future<String?> register(String firstname, String surname, String phone, String email, String password) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "5";
@@ -555,7 +555,7 @@ class RemoteServices {
   }
 
   static Future<String?> removeAddress(String address_id) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "9";
@@ -570,7 +570,7 @@ class RemoteServices {
   }
 
   static Future<String?> removeFromCart(int id) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "17";
@@ -584,7 +584,7 @@ class RemoteServices {
   }
 
   static Future<String?> removeFromWhishlist(String product_id) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "27";
@@ -599,7 +599,7 @@ class RemoteServices {
   }
 
   static Future<String?> removeSupport(int support_id) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "12";
@@ -614,7 +614,7 @@ class RemoteServices {
   }
 
   static Future<String?> sendMessageSupport(String response_id, String message) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "13";
@@ -632,7 +632,7 @@ class RemoteServices {
   }
 
   static Future<String?> setDefaultAddress(int address_id) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "8";
@@ -647,7 +647,7 @@ class RemoteServices {
   }
 
   static Future<String?> setDeliveryAddress(int area) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "4";
@@ -664,7 +664,7 @@ class RemoteServices {
   static Future<String?> setGelAl() async {
     //"{"status":1,"delivery_min":"1,00","delivery_amount":"0,00","total_amount":"0,00","amount":"0,00"}"
 
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php?get=72');
+    var url = Uri.parse('https://demo.orderio.de/request.php?get=72');
     var map = new Map<String, dynamic>();
     map['action'] = "72";
     var response = await client.post(url, body: map, headers: headers);
@@ -678,7 +678,7 @@ class RemoteServices {
   }
 
   static Future<String?> updateCart(int id, int quantity) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "18";
@@ -703,7 +703,7 @@ class RemoteServices {
   }
 
   static Future<String?> updateProfile(String firstname, String surname, String phone, String email, String password) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "7";
@@ -722,7 +722,7 @@ class RemoteServices {
   }
 
   static Future<String?> updateSocialPhoto(String photoUrl) async {
-    var url = Uri.parse('https://7zwerge.orderio.de/request.php');
+    var url = Uri.parse('https://demo.orderio.de/request.php');
     var map = new Map<String, dynamic>();
     map['api'] = "1";
     map['action'] = "33";
