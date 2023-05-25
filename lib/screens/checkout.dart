@@ -928,7 +928,10 @@ class checkoutDetailWidget extends GetView<ProductController> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) => Payment(
-                          tutar: controller.cartItems!.total.toString(),
+                          tutar: priceFormat((double.parse(controller.cartItems!.totalUnformatted) +
+                                  double.parse(userController.selectedArea!.deliveryAmount.toString())))
+                              .toString()
+                              .replaceAll(",", "."),
                           araToplam: controller.cartItems!.amount.toString(),
                           getirmeucreti: userController.selectedArea!.deliveryAmount.toString(),
                           adsoyad: controller.nameController!.text,
