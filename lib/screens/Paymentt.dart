@@ -7,8 +7,20 @@ import 'package:zwerge/screens/Services.dart';
 class Payment extends StatefulWidget {
   final Function onFinish;
   final tutar;
+  final String araToplam;
+  final String getirmeucreti;
+  final String adsoyad;
+  final String adresCity;
+  final String phone;
 
-  Payment({required this.onFinish, required this.tutar});
+  Payment(
+      {required this.onFinish,
+      required this.tutar,
+      required this.araToplam,
+      required this.getirmeucreti,
+      required this.adsoyad,
+      required this.adresCity,
+      required this.phone});
 
   @override
   State<StatefulWidget> createState() {
@@ -33,9 +45,9 @@ class PaymentState extends State<Payment> {
   String cancelURL = 'cancel.example.com';
 
   // item name, price and quantity
-  String itemName = 'iPhone 7';
+  String itemName = '';
 
-  String itemPrice = '200';
+  String itemPrice = "";
   int quantity = 1;
   @override
   Widget build(BuildContext context) {
@@ -91,24 +103,24 @@ class PaymentState extends State<Payment> {
     }
   }
 
-  Map<String, dynamic> getOrderParams() {
+  Map<String, dynamic> getOrderParams(String toplam, String getirmeucreti, String adsoyad, String adresCity, String phone) {
     List items = [
       {"name": itemName, "quantity": quantity, "price": itemPrice, "currency": defaultCurrency["currency"]}
     ];
 
     // checkout invoice details
-    String totalAmount = '200';
-    String subTotalAmount = '200';
+    String totalAmount = toplam;
+    String subTotalAmount = toplam;
     String shippingCost = '0';
     int shippingDiscountCost = 0;
-    String userFirstName = 'Arsalan';
-    String userLastName = 'Umar';
-    String addressCity = 'Islamabad';
-    String addressStreet = "i-10";
-    String addressZipCode = '44000';
-    String addressCountry = 'Pakistan';
-    String addressState = 'Islamabad';
-    String addressPhoneNumber = '+923200811288';
+    String userFirstName = adsoyad;
+    String userLastName = '';
+    String addressCity = adresCity;
+    String addressStreet = "";
+    String addressZipCode = '';
+    String addressCountry = '';
+    String addressState = '';
+    String addressPhoneNumber = phone;
 
     Map<String, dynamic> temp = {
       "intent": "sale",
@@ -147,12 +159,18 @@ class PaymentState extends State<Payment> {
   @override
   void initState() {
     super.initState();
-
+    itemPrice = widget.tutar.toString();
     Future.delayed(Duration.zero, () async {
       try {
         accessToken = await services.getAccessToken();
 
-        final transactions = getOrderParams();
+        final transactions = getOrderParams(
+          widget.tutar.toString(),
+          widget.getirmeucreti.toString(),
+          widget.adsoyad.toString(),
+          widget.adresCity.toString(),
+          widget.phone.toString(),
+        );
         final res = await services.createPaypalPayment(transactions, accessToken);
         setState(() {
           checkoutUrl = res["approvalUrl"]!;

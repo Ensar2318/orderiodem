@@ -925,26 +925,15 @@ class checkoutDetailWidget extends GetView<ProductController> {
                     int randomNumber = random.nextInt(90000) + 10000;
                     controller.checkoutComplete(randomNumber);
                   } else if (controller.selectedPayment == 1) {
-                    // return null;
-                    /* controller.FlutterPaypalNativePlugin.addPurchaseUnit(
-                      FPayPalPurchaseUnit(
-                        // random prices
-                        amount: double.parse(controller.cartItems != null ? controller.cartItems!.total.toString() : '0'),
-
-                        ///please use your own algorithm for referenceId. Maybe ProductID?
-                        referenceId: FPayPalStrHelper.getRandomString(16),
-                      ),
-                    );
-
-                    controller.initPayPal();
-                    controller.FlutterPaypalNativePlugin.makeOrder(
-                      action: FPayPalUserAction.payNow,
-                    );*/
-
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) => Payment(
-                          tutar: 12,
+                          tutar: controller.cartItems!.total.toString(),
+                          araToplam: controller.cartItems!.amount.toString(),
+                          getirmeucreti: userController.selectedArea!.deliveryAmount.toString(),
+                          adsoyad: controller.nameController!.text,
+                          adresCity: controller.addressController!.text,
+                          phone: controller.phoneController!.text,
                           onFinish: (number) async {
                             // payment done
                             /*  final snackBar = SnackBar(
@@ -961,6 +950,9 @@ class checkoutDetailWidget extends GetView<ProductController> {
                                     .showSnackBar(snackBar); */
                             print('order id: ' + number);
                             print('Payment done Successfully');
+                            Random random = Random();
+                            int randomNumber = random.nextInt(90000) + 10000;
+                            controller.checkoutComplete(randomNumber);
                           },
                         ),
                       ),

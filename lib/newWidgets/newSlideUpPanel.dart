@@ -195,7 +195,7 @@ class mySlideUpPanel extends GetView<ProductController> {
                 Text(
                     controller.cartItems != null
                         ? userController.selectedArea != null
-                            ? (double.parse(userController.selectedArea!.minAmount.replaceAll(".", ",")) <=
+                            ? (double.parse(userController.selectedArea!.minAmount.replaceAll(",", ".")) <=
                                     double.parse(controller.cartItems!.amount.replaceAll(",", ".")))
                                 ? "Sie haben den Mindestbestellwert von ${userController.selectedArea!.minAmount} € erreicht und können jetzt fortfahren."
                                 : "Leider können Sie noch nicht bestellen. Wir liefern erst ab einem Mindestbestellwert von ${userController.selectedArea!.minAmount} € (exkl. Lieferkosten)."
